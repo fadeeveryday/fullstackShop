@@ -7,7 +7,7 @@ import { observer } from "mobx-react-lite";
 const NavBar = observer(() => {
   const { user } = useContext(Context)
   return (
-  <Navbar bg="dark" data-bs-theme="dark">
+  <Navbar className="position-absolute top-0 right-0 w-100" bg="dark" data-bs-theme="dark">
     <Container>
       <Nav.Link style={{color: "white",}} to={SHOP_ROUTE}>КупиДевайс</Nav.Link>
         { user.isAuth ?
@@ -20,7 +20,6 @@ const NavBar = observer(() => {
               <Button variant="outline-light" onClick={() => user.setIsAuth(true)}>Авторизация</Button>
             </Nav>
               }
-      
     </Container>
   </Navbar>
   )
